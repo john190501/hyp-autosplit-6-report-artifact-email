@@ -53,4 +53,4 @@ framework:
     - "-Dplatname=linux"
     - "--file=pom02.xml"
 
-jobLabel: [Autosplit 2, Report, Artifacts, Email]
+jobLabel: [Autosplit 6, Report, Artifacts, Email]

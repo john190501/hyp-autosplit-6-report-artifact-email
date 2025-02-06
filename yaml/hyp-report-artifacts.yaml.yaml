@@ -3,7 +3,7 @@ version: 0.2
 runson: win
 
 autosplit: true
-concurrency: 6
+concurrency: 7
 
 retryOnFailure: true
 maxRetries: 1

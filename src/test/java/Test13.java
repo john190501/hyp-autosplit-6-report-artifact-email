@@ -1,4 +1,3 @@
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -34,7 +33,7 @@ public class Test13
 
         capabilities.setCapability("platform", System.getenv("HYPEREXECUTE_PLATFORM"));
         capabilities.setCapability("browserName", browser);
-        capabilities.setCapability("version",version);
+        capabilities.setCapability("version", version);
 
         capabilities.setCapability("tunnel",false);
         capabilities.setCapability("network",true);
@@ -58,17 +57,17 @@ public class Test13
         ExtentTest test1 = extent.startTest("demo application test 13-1", "To Do App test 1");
 
         driver.get(testURL);
-        Thread.sleep(5000);
+        Thread.sleep(13000);
 
         test1.log(LogStatus.PASS, "URL is opened");
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 13);
         test1.log(LogStatus.PASS, "Wait created");
 
         By textField = By.id("sampletodotext");
 
         WebElement addText = driver.findElement(textField);
 
-        int item_count = 5;
+        int item_count = 13;
 
         for (int i = 1; i <= item_count; i++) {
             addText.click();
@@ -79,7 +78,7 @@ public class Test13
 
         WebElement temp_element;
 
-        int totalCount = item_count+5;
+        int totalCount = item_count+13;
         int remaining = totalCount-1;
 
         for (int i = 1; i <= totalCount; i++, remaining--) {
@@ -87,7 +86,7 @@ public class Test13
             String xpath = "(//input[@type='checkbox'])["+i+"]";
 
             driver.findElement(By.xpath(xpath)).click();
-            Thread.sleep(500);
+            Thread.sleep(1300);
             test1.log(LogStatus.PASS, "Item No. " + i + " marked completed");
             By remainingItem = By.className("ng-binding");
             String actualText = driver.findElement(remainingItem).getText();
@@ -96,8 +95,10 @@ public class Test13
             if (!expectedText.equals(actualText)) {
                 test1.log(LogStatus.FAIL, "Wrong Text Description");
                 status = "failed";
+            }else{
+                status = "passed";
             }
-            Thread.sleep(500);
+            Thread.sleep(1300);
 
             test1.log(LogStatus.PASS, "Item No. " + i + " completed");
         }

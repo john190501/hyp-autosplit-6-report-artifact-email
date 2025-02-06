@@ -1,6 +1,4 @@
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,6 +9,7 @@ import java.time.Duration;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+
 public class Test10
 {
     WebDriver driver = null;
@@ -21,6 +20,7 @@ public class Test10
 //    String testURL = "https://todomvc.com/examples/react/#/";
     String testURL = "https://lambdatest.github.io/sample-todo-app/";
     String testURLTitle = "Sample page - lambdatest.com";
+
     @BeforeMethod
     @Parameters(value={"browser","version","platform", "resolution"})
     public void testSetUp(String browser, String version, String platform, String resolution) throws Exception
@@ -28,8 +28,8 @@ public class Test10
         String platformName = System.getenv("HYPEREXECUTE_PLATFORM") != null ? System.getenv("HYPEREXECUTE_PLATFORM") : platform;
         
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("build", "[HyperExecute - 2] Demonstration of the TestNG Framework");
-        capabilities.setCapability("name", "[HyperExecute - 2] Demonstration of the TestNG Framework");
+        capabilities.setCapability("build", "[HyperExecute - 10] Demonstration of the TestNG Framework");
+        capabilities.setCapability("name", "[HyperExecute - 10] Demonstration of the TestNG Framework");
 
         capabilities.setCapability("platform", System.getenv("HYPEREXECUTE_PLATFORM"));
         capabilities.setCapability("browserName", browser);
@@ -52,22 +52,22 @@ public class Test10
     }
 
     @Test(description="To Do App on React App")
-    public void Test10_element_addition_1() throws InterruptedException
+    public void test10_element_addition_1() throws InterruptedException
     {   ExtentReports extent = new ExtentReports("target/surefire-reports/html/extentReport.html");
-        ExtentTest test1 = extent.startTest("demo application test 2-1", "To Do App test 1");
+        ExtentTest test1 = extent.startTest("demo application test 10-1", "To Do App test 1");
 
         driver.get(testURL);
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         test1.log(LogStatus.PASS, "URL is opened");
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         test1.log(LogStatus.PASS, "Wait created");
 
         By textField = By.id("sampletodotext");
 
         WebElement addText = driver.findElement(textField);
 
-        int item_count = 5;
+        int item_count = 10;
 
         for (int i = 1; i <= item_count; i++) {
             addText.click();
@@ -78,7 +78,7 @@ public class Test10
 
         WebElement temp_element;
 
-        int totalCount = item_count+5;
+        int totalCount = item_count+10;
         int remaining = totalCount-1;
 
         for (int i = 1; i <= totalCount; i++, remaining--) {
@@ -86,7 +86,7 @@ public class Test10
             String xpath = "(//input[@type='checkbox'])["+i+"]";
 
             driver.findElement(By.xpath(xpath)).click();
-            Thread.sleep(500);
+            Thread.sleep(1000);
             test1.log(LogStatus.PASS, "Item No. " + i + " marked completed");
             By remainingItem = By.className("ng-binding");
             String actualText = driver.findElement(remainingItem).getText();
@@ -95,8 +95,10 @@ public class Test10
             if (!expectedText.equals(actualText)) {
                 test1.log(LogStatus.FAIL, "Wrong Text Description");
                 status = "failed";
+            }else{
+                status = "passed";
             }
-            Thread.sleep(500);
+            Thread.sleep(1000);
 
             test1.log(LogStatus.PASS, "Item No. " + i + " completed");
         }

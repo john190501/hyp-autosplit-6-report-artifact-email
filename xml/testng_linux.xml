@@ -42,4 +42,112 @@
 				<class name="Test4" />
 			</classes>
 	</test>
+	<test name="Test_5">
+			<parameter name="browser" value="Chrome"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test5" />
+			</classes>
+	</test>
+	<test name="Test_6">
+			<parameter name="browser" value="Firefox"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test6" />
+			</classes>
+	</test>
+	<test name="Test_7">
+			<parameter name="browser" value="MicrosoftEdge"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test7" />
+			</classes>
+	</test>
+	<test name="Test_8">
+			<parameter name="browser" value="MicrosoftEdge"/>
+			<parameter name="version" value="latest-1"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test8" />
+			</classes>
+	</test>
+	<test name="Test_9">
+			<parameter name="browser" value="Chrome"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test9" />
+			</classes>
+	</test>
+	<test name="Test_10">
+			<parameter name="browser" value="Firefox"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test10" />
+			</classes>
+	</test>
+	<test name="Test_11">
+			<parameter name="browser" value="MicrosoftEdge"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test11" />
+			</classes>
+	</test>
+	<test name="Test_12">
+			<parameter name="browser" value="MicrosoftEdge"/>
+			<parameter name="version" value="latest-1"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test12" />
+			</classes>
+	</test>
+	<test name="Test_13">
+			<parameter name="browser" value="Chrome"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test13" />
+			</classes>
+	</test>
+	<test name="Test_14">
+			<parameter name="browser" value="Firefox"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test14" />
+			</classes>
+	</test>
+	<test name="Test_15">
+			<parameter name="browser" value="MicrosoftEdge"/>
+			<parameter name="version" value="latest"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test15" />
+			</classes>
+	</test>
+	<test name="Test_16">
+			<parameter name="browser" value="MicrosoftEdge"/>
+			<parameter name="version" value="latest-1"/>
+			<parameter name="platform" value="LINUX"/>
+			<parameter name="resolution" value="1024x768"/>
+			<classes>
+				<class name="Test16" />
+			</classes>
+	</test>
 </suite>

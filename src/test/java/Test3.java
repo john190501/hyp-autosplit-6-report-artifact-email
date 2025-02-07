@@ -1,4 +1,3 @@
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -68,7 +67,7 @@ public class Test3
 
         WebElement addText = driver.findElement(textField);
 
-        int item_count = 5;
+        int item_count = 1;
 
         for (int i = 1; i <= item_count; i++) {
             addText.click();

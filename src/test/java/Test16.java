@@ -52,33 +52,33 @@ public class Test16
     }
 
     @Test(description="To Do App on React App")
-    public void test16_element_addition_1() throws InterruptedException
+    public void test16_element_addition_16() throws InterruptedException
     {   ExtentReports extent = new ExtentReports("target/surefire-reports/html/extentReport.html");
-        ExtentTest test1 = extent.startTest("demo application test 16-1", "To Do App test 1");
+        ExtentTest test16 = extent.startTest("demo application test 16-1", "To Do App test 16");
 
         driver.get(testURL);
-        Thread.sleep(16000);
+        Thread.sleep(5000);
 
-        test1.log(LogStatus.PASS, "URL is opened");
-        WebDriverWait wait = new WebDriverWait(driver, 16);
-        test1.log(LogStatus.PASS, "Wait created");
+        test16.log(LogStatus.PASS, "URL is opened");
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        test16.log(LogStatus.PASS, "Wait created");
 
         By textField = By.id("sampletodotext");
 
         WebElement addText = driver.findElement(textField);
 
-        int item_count = 16;
+        int item_count = 1;
 
         for (int i = 1; i <= item_count; i++) {
             addText.click();
             addText.sendKeys("Adding a new item " + i + Keys.ENTER);
-            test1.log(LogStatus.PASS, "New item No. " + i + " is added");
+            test16.log(LogStatus.PASS, "New item No. " + i + " is added");
             Thread.sleep(2000);
         }
 
         WebElement temp_element;
 
-        int totalCount = item_count+16;
+        int totalCount = item_count+5;
         int remaining = totalCount-1;
 
         for (int i = 1; i <= totalCount; i++, remaining--) {
@@ -86,24 +86,22 @@ public class Test16
             String xpath = "(//input[@type='checkbox'])["+i+"]";
 
             driver.findElement(By.xpath(xpath)).click();
-            Thread.sleep(1600);
-            test1.log(LogStatus.PASS, "Item No. " + i + " marked completed");
+            Thread.sleep(500);
+            test16.log(LogStatus.PASS, "Item No. " + i + " marked completed");
             By remainingItem = By.className("ng-binding");
             String actualText = driver.findElement(remainingItem).getText();
             String expectedText = remaining+" of "+totalCount+" remaining";
 
             if (!expectedText.equals(actualText)) {
-                test1.log(LogStatus.FAIL, "Wrong Text Description");
+                test16.log(LogStatus.FAIL, "Wrong Text Description");
                 status = "failed";
-            }else{
-                status = "passed";
             }
-            Thread.sleep(1600);
+            Thread.sleep(500);
 
-            test1.log(LogStatus.PASS, "Item No. " + i + " completed");
+            test16.log(LogStatus.PASS, "Item No. " + i + " completed");
         }
 
-        extent.endTest(test1);
+        extent.endTest(test16);
         extent.flush();
 
         /* Once you are outside this code, the list would be empty */

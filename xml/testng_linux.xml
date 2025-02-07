@@ -16,7 +16,7 @@
 			</classes>
 	</test>
 	<test name="Test_2">
-			<parameter name="browser" value="Firefox"/>
+			<parameter name="browser" value="MicrosoftEdge"/>
 			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024x768"/>
@@ -34,8 +34,8 @@
 			</classes>
 	</test>
 	<test name="Test_4">
-			<parameter name="browser" value="MicrosoftEdge"/>
-			<parameter name="version" value="latest-1"/>
+			<parameter name="browser" value="Chrome"/>
+			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024x768"/>
 			<classes>
@@ -52,7 +52,7 @@
 			</classes>
 	</test>
 	<test name="Test_6">
-			<parameter name="browser" value="Firefox"/>
+			<parameter name="browser" value="MicrosoftEdge"/>
 			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024x768"/>
@@ -70,8 +70,8 @@
 			</classes>
 	</test>
 	<test name="Test_8">
-			<parameter name="browser" value="MicrosoftEdge"/>
-			<parameter name="version" value="latest-1"/>
+			<parameter name="browser" value="Chrome"/>
+			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024x768"/>
 			<classes>
@@ -88,7 +88,7 @@
 			</classes>
 	</test>
 	<test name="Test_10">
-			<parameter name="browser" value="Firefox"/>
+			<parameter name="browser" value="MicrosoftEdge"/>
 			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024x768"/>
@@ -106,8 +106,8 @@
 			</classes>
 	</test>
 	<test name="Test_12">
-			<parameter name="browser" value="MicrosoftEdge"/>
-			<parameter name="version" value="latest-1"/>
+			<parameter name="browser" value="Chrome"/>
+			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024x768"/>
 			<classes>
@@ -124,7 +124,7 @@
 			</classes>
 	</test>
 	<test name="Test_14">
-			<parameter name="browser" value="Firefox"/>
+			<parameter name="browser" value="MicrosoftEdge"/>
 			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024x768"/>
@@ -142,8 +142,8 @@
 			</classes>
 	</test>
 	<test name="Test_16">
-			<parameter name="browser" value="MicrosoftEdge"/>
-			<parameter name="version" value="latest-1"/>
+			<parameter name="browser" value="Chrome"/>
+			<parameter name="version" value="latest"/>
 			<parameter name="platform" value="LINUX"/>
 			<parameter name="resolution" value="1024x768"/>
 			<classes>

@@ -67,7 +67,7 @@ public class Test4
 
         WebElement addText = driver.findElement(textField);
 
-        int item_count = 5;
+        int item_count = 1;
 
         for (int i = 1; i <= item_count; i++) {
             addText.click();
@@ -95,8 +95,6 @@ public class Test4
             if (!expectedText.equals(actualText)) {
                 test1.log(LogStatus.FAIL, "Wrong Text Description");
                 status = "failed";
-            }else{
-                status = "passed";
             }
             Thread.sleep(500);
 

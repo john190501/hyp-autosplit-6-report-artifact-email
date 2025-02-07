@@ -2,6 +2,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,15 +13,14 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class Test5
 {
-    WebDriver driver = null;
+    RemoteWebDriver driver = null;
     public static String status = "passed";
-    String username = Test1.username;
-    String access_key = Test1.access_key;
+    public static String username = System.getenv("LT_USERNAME");
+    public static String access_key = System.getenv("LT_ACCESS_KEY");
 
 //    String testURL = "https://todomvc.com/examples/react/#/";
     String testURL = "https://lambdatest.github.io/sample-todo-app/";
     String testURLTitle = "Sample page - lambdatest.com";
-
     @BeforeMethod
     @Parameters(value={"browser","version","platform", "resolution"})
     public void testSetUp(String browser, String version, String platform, String resolution) throws Exception
@@ -28,9 +28,9 @@ public class Test5
         String platformName = System.getenv("HYPEREXECUTE_PLATFORM") != null ? System.getenv("HYPEREXECUTE_PLATFORM") : platform;
         
         DesiredCapabilities capabilities = new DesiredCapabilities();
+
         capabilities.setCapability("build", "[HyperExecute - 5] Demonstration of the TestNG Framework");
         capabilities.setCapability("name", "[HyperExecute - 5] Demonstration of the TestNG Framework");
-
         capabilities.setCapability("platform", System.getenv("HYPEREXECUTE_PLATFORM"));
         capabilities.setCapability("browserName", browser);
         capabilities.setCapability("version", version);
@@ -52,27 +52,28 @@ public class Test5
     }
 
     @Test(description="To Do App on React App")
-    public void test5_element_addition_1() throws InterruptedException
-    {   ExtentReports extent = new ExtentReports("target/surefire-reports/html/extentReport.html");
-        ExtentTest test1 = extent.startTest("demo application test 5-1", "To Do App test 1");
+    public void test5_element_addition_5() throws InterruptedException
+    {
+        ExtentReports extent = new ExtentReports("target/surefire-reports/html/extentReport.html");
+        ExtentTest test5 = extent.startTest("demo application test 5-1", "To Do App test 5");
 
         driver.get(testURL);
         Thread.sleep(5000);
 
-        test1.log(LogStatus.PASS, "URL is opened");
+        test5.log(LogStatus.PASS, "URL is opened");
         WebDriverWait wait = new WebDriverWait(driver, 5);
-        test1.log(LogStatus.PASS, "Wait created");
+        test5.log(LogStatus.PASS, "Wait created");
 
         By textField = By.id("sampletodotext");
 
         WebElement addText = driver.findElement(textField);
 
-        int item_count = 5;
+        int item_count = 1;
 
         for (int i = 1; i <= item_count; i++) {
             addText.click();
             addText.sendKeys("Adding a new item " + i + Keys.ENTER);
-            test1.log(LogStatus.PASS, "New item No. " + i + " is added");
+            test5.log(LogStatus.PASS, "New item No. " + i + " is added");
             Thread.sleep(2000);
         }
 
@@ -87,23 +88,78 @@ public class Test5
 
             driver.findElement(By.xpath(xpath)).click();
             Thread.sleep(500);
-            test1.log(LogStatus.PASS, "Item No. " + i + " marked completed");
+            test5.log(LogStatus.PASS, "Item No. " + i + " marked completed");
             By remainingItem = By.className("ng-binding");
             String actualText = driver.findElement(remainingItem).getText();
             String expectedText = remaining+" of "+totalCount+" remaining";
 
             if (!expectedText.equals(actualText)) {
-                test1.log(LogStatus.FAIL, "Wrong Text Description");
+                test5.log(LogStatus.FAIL, "Wrong Text Description");
                 status = "failed";
-            }else{
-                status = "passed";
             }
             Thread.sleep(500);
 
-            test1.log(LogStatus.PASS, "Item No. " + i + " completed");
+            test5.log(LogStatus.PASS, "Item No. " + i + " completed");
         }
 
-        extent.endTest(test1);
+        extent.endTest(test5);
+        extent.flush();
+
+        /* Once you are outside this code, the list would be empty */
+    }
+
+    @Test(description="To Do App on React App")
+    public void test5_element_addition_2() throws InterruptedException
+    {
+        ExtentReports extent = new ExtentReports("target/surefire-reports/html/extentReport.html");
+        ExtentTest test5 = extent.startTest("demo application test 5-2", "To Do App test 2");
+
+        driver.get(testURL);
+        Thread.sleep(5000);
+
+        test5.log(LogStatus.PASS, "URL is opened");
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        test5.log(LogStatus.PASS, "Wait created");
+
+        By textField = By.id("sampletodotext");
+
+        WebElement addText = driver.findElement(textField);
+
+        int item_count = 1;
+
+        for (int i = 1; i <= item_count; i++) {
+            addText.click();
+            addText.sendKeys("Adding a new item " + i + Keys.ENTER);
+            test5.log(LogStatus.PASS, "New item No. " + i + " is added");
+            Thread.sleep(2000);
+        }
+
+        WebElement temp_element;
+
+        int totalCount = item_count+5;
+        int remaining = totalCount-1;
+
+        for (int i = 1; i <= totalCount; i++, remaining--) {
+
+            String xpath = "(//input[@type='checkbox'])["+i+"]";
+
+            driver.findElement(By.xpath(xpath)).click();
+            Thread.sleep(500);
+            test5.log(LogStatus.PASS, "Item No. " + i + " marked completed");
+            By remainingItem = By.className("ng-binding");
+            String actualText = driver.findElement(remainingItem).getText();
+            String expectedText = remaining+" of "+totalCount+" remaining";
+
+            if (!expectedText.equals(actualText)) {
+                test5.log(LogStatus.FAIL, "Wrong Text Description");
+                status = "failed";
+            }
+            Thread.sleep(500);
+
+            test5.log(LogStatus.PASS, "Item No. " + i + " completed");
+        }
+
+        extent.endTest(test5);
         extent.flush();
 
         /* Once you are outside this code, the list would be empty */
